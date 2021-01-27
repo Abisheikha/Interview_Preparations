@@ -24,11 +24,9 @@ void main()
 			}
 		}
 	}
-	for(i=0;i<n;i++)
-	{
-		product=a[0]*a[1]*a[n-1];
-		product1=a[n-3]*a[n-2]*a[n-1];
-	}
+	product=a[0]*a[1]*a[n-1];
+	product1=a[n-3]*a[n-2]*a[n-1];
+
 	if(product<product1)
 		{
 			printf("The largest product is %d",product1);
