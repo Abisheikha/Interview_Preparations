@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int arr[50][10],i,j,n,temp1,temp2,l,k,b[50][50];
+	printf("Enter the number of pairs:");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<2;j++)
+		{
+			scanf("%d",&arr[i][j]);
+		}
+	}
+	printf("\n");
+	for(i=0;i<n;i++)
+	{
+		for(j=i+1;j<n;j++)
+		{
+			if(arr[i][0]>arr[j][0])
+			{
+				temp1=arr[i][0];
+				arr[i][0]=arr[j][0];
+				arr[j][0]=temp1;
+				temp2=arr[i][1];
+				arr[i][1]=arr[j][1];
+				arr[j][1]=temp2;
+			}
+		}
+	}
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<2;j++)
+		{
+			if(arr[i][1]>=arr[i+1][0])
+			{
+				i=i+1;
+				for(k=i;k<n;k++)
+				{
+					for(l=0;l<2;l++)
+					{
+						arr[k][l]=arr[k+1][l];
+				 	}
+				}						
+				n--;
+				i=i-1;	
+			}	
+		}
+	}
+	printf("{");
+	for(i=0;i<n;i++)
+	{
+		printf("{");
+		for(j=0;j<2;j++)
+		{
+			printf("%d",arr[i][j]);
+			if(j==0)
+				printf(",");
+		}
+		printf("}");
+		if(i<n-1)
+			printf(",");
+	}
+	printf("}");
+}
