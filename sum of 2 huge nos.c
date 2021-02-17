@@ -5,21 +5,17 @@ void main()
 	long long int sum1=0,sum2=0,res,temp,mul=1;
 	printf("Enter number of digits of first and second array: ");
 	scanf("%d%d",&a,&b);
+	printf("Enter first array:\n");
 	for(i=0;i<a;i++)
 	{
-		scanf("%d",&arr1[i]);		
+		scanf("%d",&arr1[i]);
+		sum1=(sum1*10)+arr1[i];		
 	}
+	printf("Enter second array:\n");
 	for(i=0;i<b;i++)
 	{
-		scanf("%d",&arr2[i]);		
-	}
-	for(i=0;i<a;i++)
-	{
-		sum1=(sum1*10)+arr1[i];
-	}
-	for(i=0;i<b;i++)
-	{
-		sum2=(sum2*10)+arr2[i];
+		scanf("%d",&arr2[i]);
+		sum2=(sum2*10)+arr2[i];		
 	}
 	res=sum1+sum2;
 //	printf("%lld ",res);
@@ -30,6 +26,7 @@ void main()
 		temp=temp/10;
 		mul=mul*10;		
 	}
+	printf("The result sum is:\n");
 	i=0;
 	while(res!=0)
 	{
@@ -40,8 +37,4 @@ void main()
 		printf("%d ",result[i]);
 		i++;
 	}
-  	for(i=0;i<count;i++)
-  	{
-		printf("%d ",result[i]);
-  	}
 }
